@@ -219,3 +219,9 @@ __marimo__/
 
 # 生成物
 01-auto-index/output/
+
+# 動画の中間物
+01-auto-index/video/audio/
+01-auto-index/video/recordings/
+01-auto-index/video/work/
+01-auto-index/video/output.mp4
