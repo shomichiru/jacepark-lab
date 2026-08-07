@@ -27,7 +27,7 @@
 
 | フォルダ | 内容 | 記事 | 動画 |
 | --- | --- | --- | --- |
-| （準備中） | | | |
+| [01-auto-index](01-auto-index) | まとめページを自動生成する | [記事](https://www.jacepark.com/auto-generated-index-pages/) | 準備中 |
 
 ---
 
