@@ -1,0 +1,193 @@
+{
+  "title": "01-auto-index",
+  "scenes": [
+    {
+      "type": "command",
+      "text": "ls posts",
+      "subtitle": "サンプルの記事が、五本あります。",
+      "typing_subtitle": "まず、記事のフォルダを見てみます。",
+      "hold": 0.6
+    },
+    {
+      "type": "output",
+      "lines": [
+        {
+          "text": ""
+        },
+        {
+          "text": "a1.html  a2.html  a3.html  a4.html  a5.html",
+          "color": "path"
+        },
+        {
+          "text": ""
+        }
+      ],
+      "subtitle": "サンプルの記事が、五本あります。",
+      "hold": 2.4
+    },
+    {
+      "type": "command",
+      "text": "cat posts/a1.html",
+      "subtitle": "記事の先頭に、メタブロックが入っています。",
+      "typing_subtitle": "中身を一つ見てみます。",
+      "hold": 0.6
+    },
+    {
+      "type": "output",
+      "lines": [
+        {
+          "text": ""
+        },
+        {
+          "text": "<!--META",
+          "color": "dim"
+        },
+        {
+          "text": "title: ffmpeg で動画を切り出す"
+        },
+        {
+          "text": "slug: ffmpeg-trim"
+        },
+        {
+          "text": "tags: [ffmpeg, automation]",
+          "color": "mark"
+        },
+        {
+          "text": "note: 開始と長さを指定するだけ"
+        },
+        {
+          "text": "-->",
+          "color": "dim"
+        },
+        {
+          "text": "<p>本文</p>",
+          "color": "dim"
+        },
+        {
+          "text": ""
+        }
+      ],
+      "subtitle": "使うのは、tags の一行だけです。",
+      "hold": 4.0
+    },
+    {
+      "type": "clear"
+    },
+    {
+      "type": "command",
+      "text": "python3 build_index.py posts",
+      "subtitle": "automation が 3 件。丸が付いたものだけが生成の対象です。",
+      "typing_subtitle": "タグを基準に、記事を集計します。",
+      "hold": 0.6
+    },
+    {
+      "type": "output",
+      "lines": [
+        {
+          "text": ""
+        },
+        {
+          "text": "  ○ automation        3 件",
+          "color": "accent"
+        },
+        {
+          "text": "  － ffmpeg            2 件",
+          "color": "dim"
+        },
+        {
+          "text": "  － python            2 件",
+          "color": "dim"
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "生成するには --build を付けます。",
+          "color": "mark"
+        },
+        {
+          "text": ""
+        }
+      ],
+      "subtitle": "3 件に満たないタグは、まだページを作りません。",
+      "hold": 4.0
+    },
+    {
+      "type": "command",
+      "text": "python3 build_index.py posts --build",
+      "subtitle": "output ディレクトリに、一覧の HTML ができました。",
+      "typing_subtitle": "生成するには、build オプションを付けます。",
+      "hold": 0.6
+    },
+    {
+      "type": "output",
+      "lines": [
+        {
+          "text": ""
+        },
+        {
+          "text": "生成: output/automation.html (3 件)",
+          "color": "accent"
+        },
+        {
+          "text": ""
+        }
+      ],
+      "subtitle": "output ディレクトリに、一覧の HTML ができました。",
+      "hold": 3.0
+    },
+    {
+      "type": "clear"
+    },
+    {
+      "type": "command",
+      "text": "cat output/automation.html",
+      "subtitle": "タグごとに、記事が表の形で並んでいます。",
+      "typing_subtitle": "できたものを開いてみます。",
+      "hold": 0.6
+    },
+    {
+      "type": "output",
+      "lines": [
+        {
+          "text": ""
+        },
+        {
+          "text": "<h1>automation の記事</h1>",
+          "color": "accent"
+        },
+        {
+          "text": "<table>",
+          "color": "dim"
+        },
+        {
+          "text": "  <tr><th>記事</th><th>ひとこと</th></tr>"
+        },
+        {
+          "text": "  <tr><td>Python で外部コマンドを呼ぶ</td>...</tr>"
+        },
+        {
+          "text": "  <tr><td>ffmpeg で動画を切り出す</td>...</tr>"
+        },
+        {
+          "text": "  <tr><td>シェルスクリプトを定期実行する</td>...</tr>"
+        },
+        {
+          "text": "</table>",
+          "color": "dim"
+        },
+        {
+          "text": ""
+        }
+      ],
+      "subtitle": "まとめページは、もう手で書きません。",
+      "hold": 4.5
+    },
+    {
+      "type": "note",
+      "note": "コードは GitHub にあります",
+      "subtitle": "詳しい話は、概要欄の記事からどうぞ。",
+      "hold": 3.5
+    }
+  ]
+}

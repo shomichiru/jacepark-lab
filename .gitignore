@@ -225,3 +225,21 @@ __marimo__/
 01-auto-index/video/recordings/
 01-auto-index/video/work/
 01-auto-index/video/output.mp4
+
+# macOS
+.DS_Store
+
+# 音声・動画の素材と成果物。Git はバイナリの履歴管理に向かず、
+# 完成品は YouTube が配布先である。
+*.m4a
+*.mp4
+*.wav
+
+# 作業中に取った控え
+*.bak
+
+# 中間生成物
+01-auto-index/video/audio_gen/
+01-auto-index/video/stt/
+01-auto-index/video/gen/
+01-auto-index/video/scenes.timing.json
